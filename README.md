@@ -63,14 +63,15 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 Azure Resource	      Service Tier	               Monthly Cost
 
-Azure PostgreSQL 1vcore, 5Gb	      Basic	            $25.32
-Azure Service Bus	                  Basic	            $0.01
-Azure App Service 100ACU, 1.7GB	   Basic (B1)	      $13.14
-Azure Storage	                     Basic	            $0.05
+Azure PostgreSQL 1vcore, 5Gb	      Basic	            $25.32;
+Azure Service Bus	                  Basic	            $0.01;
+Azure App Service 100ACU, 1.7GB	   Basic (B1)	      $13.14;
+Azure Storage	                     Basic	            $0.05;
+Azure Function                     Consumption       $0.00
 
 ### Architecture Explanation
 # Azure Web App
 Since the main point of consideration in this criteria is cost, i think using App Service is ideal. The basic tier is $ 13.14 per instance in in 1 month, meaning we i can have multiple instances with a lot of functionality at a cheap amount compare to using Virtual Machine. I also use Azure Web App, because of the less complexity. Moreover the whole application is built using Python, which makes it great choice, because Python support App Service features.  
 
 # Azure Function
-Just like App Service, Azure Function is also a great choice for this application when it comes to Python language support and cost. Additionally when it comes to operation, Azure Function is great choice because it can run in App Service as well as scaling with it. Also consumption plan that i picked will ensure that the instances of the Azure Function are allocated automatically to handle all the scale requests, also we only need to pay for computig resources based on the number of executions, memory usage and time. Another reason why Azure Function is great choice for this application is it create a new message when a user creates a notification, from there a trigger will be activated in the Azure Function, which will send emails to the people. 
+Just like App Service, Azure Function is also a great choice for this application when it comes to Python language support and cost. Additionally when it comes to operation, Azure Function is great choice because it can run in App Service as well as scaling with it. Also consumption plan that i picked will ensure that the instances of the Azure Function are allocated automatically to handle all the scale requests, also we only need to pay for computig resources based on the number of executions, memory usage and time. Another reason why Azure Function is great choice for this application is it create a new message when a user creates a notification, from there a trigger will be activated in the Azure Function, which will send emails to the people.
